@@ -1,0 +1,223 @@
+:root {
+  --forest: #22392e;
+  --forest-dark: #17271f;
+  --cream: #f6f2e8;
+  --moss: #6f8f72;
+  --gold: #c08a2e;
+  --clay: #b5583a;
+  --ink: #2a2a24;
+  --line: #dcd4c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fraunces", Georgia, serif;
+  margin: 0;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.app-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2.5rem;
+}
+
+.app-header h1 {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: var(--moss);
+  max-width: 40ch;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .app-main {
+    grid-template-columns: 1.7fr 1fr;
+    align-items: start;
+  }
+}
+
+.section-heading {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--forest);
+  margin-bottom: 1.25rem;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.25rem;
+}
+
+.plant-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease;
+}
+
+.plant-card:hover {
+  border-color: var(--moss);
+}
+
+.plant-image-wrap {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--line);
+}
+
+.plant-emoji {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.plant-info {
+  padding: 0.9rem 1rem 0.4rem;
+  flex: 1;
+}
+
+.plant-name {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.add-button {
+  margin: 0.75rem 1rem 1rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--forest);
+  color: var(--cream);
+  border: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.add-button:hover {
+  background: var(--forest-dark);
+}
+
+.cart {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.empty-cart {
+  color: var(--moss);
+  font-size: 0.95rem;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cart-item-emoji {
+  font-size: 1.8rem;
+  width: 44px;
+  text-align: center;
+}
+
+.cart-item-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.cart-item-quantity {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--moss);
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.qty-button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  border-radius: 3px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--forest);
+}
+
+.qty-button:hover {
+  background: var(--line);
+}
+
+.remove-button {
+  border: none;
+  background: none;
+  color: var(--clay);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
+}
+
+.remove-button:hover {
+  text-decoration: underline;
+}
